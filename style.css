@@ -1,0 +1,344 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* GENEL */
+body{
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(135deg,#00249C,#4DA3FF);
+  color:white;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:60px 18px;
+}
+
+header h1{
+  font-family:'Playfair Display', serif;
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+header p{
+  font-size:1.2rem;
+  opacity:0.9;
+}
+
+/* CARD */
+.card{
+  max-width:900px;
+  margin:40px auto;
+  background:rgba(255,255,255,0.15);
+  padding:30px;
+  border-radius:18px;
+  backdrop-filter:blur(10px);
+}
+
+.card p{
+  font-size:1.05rem;
+  line-height:1.85;
+  margin-bottom:15px;
+}
+
+.card h3{
+  font-family:'Playfair Display', serif;
+  font-size:1.6rem;
+  margin-bottom:10px;
+}
+
+/* MEMORIES */
+.memories{
+  padding:20px;
+}
+
+/* Səndə <head> tag-i yazılıb, ona görə bu selector qalır.
+   Amma gələcəkdə bunu <h2> etməyin daha doğrudur. */
+.memories head{
+  display:block;
+  text-align:center;
+  font-size:1.8rem;
+  font-family:'Playfair Display', serif;
+  margin-bottom:30px;
+}
+
+/* MEMORY BLOCK (Desktop) */
+.memory{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.memory.reverse{
+  flex-direction:row-reverse;
+}
+
+/* width:50% yerinə flex daha stabil */
+.text, .photo{
+  flex:1;
+  width:auto;
+}
+
+.photo img{
+  width:100%;
+  max-width:520px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* BUTTON (sənin köhnə button stilin) */
+button{
+  display:block;
+  margin:40px auto;
+  padding:14px 35px;
+  border:none;
+  border-radius:40px;
+  font-size:1rem;
+  background:white;
+  color:#00249C;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#00249C;
+  color:white;
+  border:1px solid white;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:0.9rem;
+  opacity:0.8;
+}
+
+/* Kiçik util */
+.center{ text-align:center; }
+
+.section-title{
+  font-family:'Playfair Display', serif;
+  font-size:1.7rem;
+  margin-bottom:12px;
+}
+
+.counter-line{
+  font-size:1.15rem;
+  line-height:1.7;
+  margin:10px 0 18px;
+}
+
+#daysTogether{
+  font-weight:600;
+  font-size:1.3rem;
+  text-decoration: underline;
+}
+
+.music-panel{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.btn{
+  padding:12px 18px;
+  border:none;
+  border-radius:999px;
+  background:#fff;
+  color:#00249C;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  background:#00249C;
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.8);
+}
+
+.volume-wrap{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background: rgba(255,255,255,0.14);
+  padding:10px 14px;
+  border-radius:999px;
+}
+
+#volume{
+  width:170px;
+}
+
+.tiny{
+  opacity:0.85;
+  font-size:0.9rem;
+  margin-top:14px;
+}
+
+/* ❤️ Hearts */
+.hearts{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:999;
+}
+
+.heart{
+  position:absolute;
+  bottom:-20px;
+  font-size:20px;
+  animation: floatUp 6s linear infinite;
+  opacity:0.8;
+}
+
+@keyframes floatUp{
+  0%{ transform: translateY(0) scale(1); opacity:1; }
+  100%{ transform: translateY(-110vh) scale(1.5); opacity:0; }
+}
+
+/* 🔍 Lightbox */
+.lightbox{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,0.75);
+  z-index: 2000;
+  padding: 18px;
+}
+
+.lightbox.show{ display:flex; }
+
+.lightbox img{
+  max-width: 95vw;
+  max-height: 85vh;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+}
+
+.lb-close{
+  position:absolute;
+  top:14px;
+  right:18px;
+  font-size: 38px;
+  line-height: 38px;
+  color:#fff;
+  cursor:pointer;
+  user-select:none;
+}
+
+.photo img, .card img{
+  cursor: zoom-in;
+}
+
+/* 📱 MOBIL UYUMLULUK (TƏK BLOK) */
+/* 📱 MOBIL – hamısında ŞƏKİL YUXARIDA, YAZI AŞAĞIDA */
+@media (max-width:768px){
+  header h1{ font-size:2.1rem; }
+  header p{ font-size:1.05rem; }
+
+  .card{
+    margin:18px 14px;
+    padding:18px;
+    border-radius:16px;
+  }
+
+  .card p{
+    font-size:1rem;
+    line-height:1.9;
+  }
+
+  .card h3{
+    font-size:1.3rem;
+    line-height:1.25;
+  }
+
+  .memory,
+  .memory.reverse{
+    flex-direction:column !important;
+    align-items:stretch;
+    gap:16px;
+  }
+
+  /* ✅ HAMISI ÜÇÜN: əvvəl şəkil, sonra yazı */
+  .memory .photo{ order:1; }
+  .memory .text{ order:2; }
+
+  .text, .photo{
+    width:100%;
+  }
+
+  .photo img{
+    width:100%;
+    max-width:100%;
+    border-radius:14px;
+  }
+
+  .section-title{ font-size:1.45rem; }
+  .counter-line{ font-size:1.05rem; }
+
+  #volume{ width:150px; }
+
+  button, .btn{
+    width:100%;
+    max-width:360px;
+  }
+}
+
+  /* ƏSAS FIX: reverse də daxil hamısı column */
+  .memory,
+  .memory.reverse{
+    flex-direction:column !important;
+    align-items:stretch;
+    gap:16px;
+  }
+
+  .text, .photo{
+    width:100%;
+  }
+
+  .photo img{
+    width:100%;
+    max-width:100%;
+    border-radius:14px;
+  }
+
+  .section-title{ font-size:1.45rem; }
+  .counter-line{ font-size:1.05rem; }
+
+  #volume{ width:150px; }
+
+  button, .btn{
+    width:100%;
+    max-width:360px;
+  }
+.final-box{
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.22),
+    rgba(255,255,255,0.10)
+  );
+}
+
+.final-box p{
+  font-size:1.05rem;
+  line-height:1.85;
+}
+
